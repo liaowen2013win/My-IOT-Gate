@@ -9,7 +9,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 /**
  * 
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月18日
  */
 public class RpcEncoder extends MessageToByteEncoder<ResponseData> {

@@ -11,7 +11,7 @@ import gate.server.Server4Terminal;
 /**
  * 规约相关缓存
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月22日
  */
 public class ProtocalStrategyCache {

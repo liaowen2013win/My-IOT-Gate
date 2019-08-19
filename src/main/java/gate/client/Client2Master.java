@@ -32,7 +32,7 @@ import io.netty.util.concurrent.DefaultEventExecutorGroup;
 /**
  * 网关与前置相连的客户端
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月30日
  */
 public class Client2Master {

@@ -2,7 +2,7 @@ package gate.base.constant;
 /**
  * 常量
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月30日
  */
 public class ConstantValue {

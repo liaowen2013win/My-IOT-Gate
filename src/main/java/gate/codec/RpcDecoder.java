@@ -14,7 +14,7 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 /**
  * 
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月18日
  */
 public class RpcDecoder extends LengthFieldBasedFrameDecoder{

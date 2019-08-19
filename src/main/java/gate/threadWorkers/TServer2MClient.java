@@ -13,7 +13,7 @@ import io.netty.channel.Channel;
 /**
  * 上行报文中转
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月30日
  */
 public class TServer2MClient implements DataTransfer{

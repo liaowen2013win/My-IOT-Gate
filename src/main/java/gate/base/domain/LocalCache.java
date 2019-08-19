@@ -2,7 +2,7 @@ package gate.base.domain;
 /**
  * 本地缓存统一接口
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月30日
  */
 public interface LocalCache {

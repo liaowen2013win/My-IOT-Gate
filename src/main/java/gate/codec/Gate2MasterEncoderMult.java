@@ -22,7 +22,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
  * 再统一通过参数中的ByteBuf将数据发送，否则当，前置不是通过netty写的时候，
  * 会导致每次前置收到的报文都是不完整的！
  * 
- * @author yangcheng
+ * @author WH_LW
  */
 public class Gate2MasterEncoderMult extends MessageToByteEncoder<ChannelData>{
 

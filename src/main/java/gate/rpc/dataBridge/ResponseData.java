@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 封装响应参数
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月17日
  */
 public class ResponseData implements Serializable{

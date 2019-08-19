@@ -21,7 +21,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 /**
  * 通用通讯客户端
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月20日
  */
 public class RemoteClient {

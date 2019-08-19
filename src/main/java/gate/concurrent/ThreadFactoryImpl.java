@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 自定义的ThreadFactory实现类
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月1日
  */
 public class ThreadFactoryImpl implements ThreadFactory{

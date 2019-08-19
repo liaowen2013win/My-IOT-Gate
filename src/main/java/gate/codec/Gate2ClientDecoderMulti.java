@@ -17,7 +17,7 @@ import io.netty.util.internal.RecyclableArrayList;
 /**
  * 长度域定长多规约解码器
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月20日
  */
 public class Gate2ClientDecoderMulti  extends ByteToMessageDecoder{

@@ -5,7 +5,7 @@ import gate.base.domain.ChannelData;
 /**
  * 
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年4月4日
  */
 public interface DataTransfer extends Runnable {

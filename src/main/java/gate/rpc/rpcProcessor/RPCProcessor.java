@@ -6,7 +6,7 @@ import gate.rpc.dataBridge.ResponseData;
 /**
  * RPC服务接口
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月17日
  */
 public interface RPCProcessor {

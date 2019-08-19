@@ -12,7 +12,7 @@ import gate.rpc.dataBridge.ResponseData;
 import gate.util.MixAll;
 
 /**
- * @author yangcheng
+ * @author WH_LW
  * @Description:
  * @date: 2019年3月30日
  */

@@ -14,7 +14,7 @@ import gate.server.Server4Terminal;
 /**
  * 多规约--需要考虑ProtocalStrategyCache缓存同步
  *
- * @author yangcheng
+ * @author WH_LW
  * @Description:
  * @date: 2019年3月18日
  */

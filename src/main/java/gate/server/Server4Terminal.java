@@ -25,7 +25,7 @@ import io.netty.util.concurrent.DefaultEventExecutorGroup;
 /**
  * 网关获取终端报文
  *
- * @author yangcheng
+ * @author WH_LW
  * @Description:
  * @date: 2019年3月30日
  */

@@ -9,6 +9,18 @@ window笔记本电脑本地测试：**单网关**、**单前置节点**，每秒
 	Entrance.java
 ### IOTGate操作指南
 	https://blog.csdn.net/sinat_28771747/article/category/8788959
+#### Windows端，使用 IDEA 启动
+    1. 启动master
+    首先启动test包下的moniMaster类，该类模拟了master，其主要作用是开启8888端口，并将物理设备通过gate发送过来的上行报文原文发送回gate由gate转发给原物理设备！
+    最新的master默认会将自己的信息注册到zookeeper中，如果已经搭建好了zookeeper集群，请配置正确的zookeeper地址，如果IOTGate只打算启动单机版那么没有zookeeper集群也无妨，正常启动就行了，不影响其接受gate的连接 ！ 注意：单机版（非集群单节点）IOTGate不支持IOTGateConsole控制台监控和动态配置网关节点多规约！
+    2. 启动IOTGate
+    启动IOTGate时，对应Entrance类。需要给予相应的命令行参数：
+    jvm虚拟机配置参数：-Xms1024m -Xmx1024m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC
+    程序启动参数：-n 1 -m 127.0.0.1 -f D:\IdeaProjects\IOTGate\iotGate.conf
+        说明：启动了一个网关编号为1、master的ip地址为127.0.0.1，同时配置文件的路径为D:\IdeaProjects\IOTGate\iotGate.conf。
+    3. 启动模拟物理设备
+    启动test包下的moniTerminal类，此处的端口应该与 iotGate.conf 配置文件中的 protocolType 对应。
+	
 ### 命令行参数说明
 
 |      参数      | 是否必选 |是否含参| 含义 |

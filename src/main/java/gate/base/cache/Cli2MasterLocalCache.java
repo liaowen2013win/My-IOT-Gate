@@ -7,7 +7,7 @@ import gate.client.Client2Master;
 /**
  * 缓存网关与前置连接的会话
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月24日
  */
 public class Cli2MasterLocalCache implements LocalCache{

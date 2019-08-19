@@ -15,7 +15,7 @@ import io.netty.channel.Channel;
 /**
  * 下行报文中转
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月30日
  */
 public class MClient2Tmnl implements DataTransfer{

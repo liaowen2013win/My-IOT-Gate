@@ -6,7 +6,7 @@ import gate.base.domain.LocalCache;
 /**
  * 缓存zookeeper中master的节点信息
  * @Description: 
- * @author  yangcheng
+ * @author  WH_LW
  * @date:   2019年3月14日
  */
 public class ZKMasterNodeLocalCache implements LocalCache{
