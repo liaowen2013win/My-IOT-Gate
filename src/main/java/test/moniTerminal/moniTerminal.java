@@ -17,84 +17,90 @@ import test.CountHelper;
 
 /**
  * 客户端
+ *
  * @author yangcheng
- * @date 2017年12月29日 
  * @version V1.0
+ * @date 2017年12月29日
  */
 public class moniTerminal {
-	static EventLoopGroup work=new NioEventLoopGroup();
-	public static Bootstrap config(){
-		//客户这边只需要创建一个线程组
-		Bootstrap bootstrap=new Bootstrap();
-		bootstrap.group(work)
-		.channel(NioSocketChannel.class)
-		.option(ChannelOption.SO_KEEPALIVE, true)
-		.option(ChannelOption.SO_SNDBUF, 32*1024)
-		.option(ChannelOption.SO_RCVBUF, 32*1024)
-		
-		//这里方法名与服务端不一样，其他一致
-		.handler(new ChannelInitializer<SocketChannel>() {
+    static EventLoopGroup work = new NioEventLoopGroup();
 
-			@Override
-			protected void initChannel(SocketChannel sc) throws Exception {
-				
-				sc.pipeline().addLast(new moniTerminalHandler());
-			}
-		});
-		return bootstrap;
-	}
-	public static void startClient(Bootstrap bootstrap) throws InterruptedException{
-		
-		
-				ChannelFuture channelFuture=bootstrap.connect("127.0.0.1", port).sync();
-				for(int i = 0; i<10 ; i++){
+    public static Bootstrap config() {
+        //客户这边只需要创建一个线程组
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.group(work)
+                .channel(NioSocketChannel.class)
+                .option(ChannelOption.SO_KEEPALIVE, true)
+                .option(ChannelOption.SO_SNDBUF, 32 * 1024)
+                .option(ChannelOption.SO_RCVBUF, 32 * 1024)
+
+                //这里方法名与服务端不一样，其他一致
+                .handler(new ChannelInitializer<SocketChannel>() {
+
+                    @Override
+                    protected void initChannel(SocketChannel sc) throws Exception {
+
+                        sc.pipeline().addLast(new moniTerminalHandler());
+                    }
+                });
+        return bootstrap;
+    }
+
+    public static void startClient(Bootstrap bootstrap) throws InterruptedException {
+
+
+        ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", port).sync();
+        for (int i = 0; i < 10; i++) {
 //					Thread.sleep(5000);
 //					if(i % 2 == 0){
 //						byte[] data = StringUtils.decodeHex("681E0081052360541304000024B801000100F007E2071A040F25090000120416");
 //						
 //						channelFuture.channel().writeAndFlush(Unpooled.wrappedBuffer(data));
 //					}else{
-						/**
-						 * 规约类型1
-						 */
+            /**
+             * 规约类型1
+             */
 //						byte[] data = StringUtils.decodeHex("681E0081052360541304000024B801000100F007E2071A040F25090000120416");
-						/**
-						 * 规约类型2
-						 */
+            /**
+             * 规约类型2
+             */
 //						byte[] data = StringUtils.decodeHex("0000001906343030303132F200077076636C6F7564077076636C6F7564");
-						/**
-						 * 规约类型3
-						 * 684A004A006800114155000000E3000001002342161526044516
-						 */
-						byte[] data = StringUtils.decodeHex("684A004A006800114155000000E3000001002342161526044516");
-						channelFuture.channel().writeAndFlush(Unpooled.wrappedBuffer(data));
-						
-						
+            /**
+             * 规约类型3
+             * 684A004A006800114155000000E3000001002342161526044516
+             */
+            byte[] data = StringUtils.decodeHex("684A004A006800114155000000E3000001002342161526044516");
+            channelFuture.channel().writeAndFlush(Unpooled.wrappedBuffer(data));
+
+
 //					}
-					
-				}
-				channelFuture.channel().closeFuture().sync();
-				work.shutdownGracefully();
-	}
-	private static int port = 9816; 
-	
-	public static void main(String[] args) throws InterruptedException {
-		/**
-		 * 模拟终端启动
-		 */
-		final Bootstrap bootstrap =config();
-		ExecutorService serExecutorService = Executors.newFixedThreadPool(CountHelper.ThreadNum);
-		for(int i=0 ; i<CountHelper.ThreadNum ;i++){
-			
-			serExecutorService.execute(new Runnable() {
-				public void run() {
-					try {
-						startClient(bootstrap);//阻塞运行 需要开线程启动
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			});
-		}
-	}
+
+        }
+        channelFuture.channel().closeFuture().sync();
+        work.shutdownGracefully();
+    }
+
+    // 此处的端口应该与 iotGate.conf 配置文件中的 protocolType 对应
+//	private static int port = 9816;
+    private static int port = 9811;
+
+    public static void main(String[] args) throws InterruptedException {
+        /**
+         * 模拟终端启动
+         */
+        final Bootstrap bootstrap = config();
+        ExecutorService serExecutorService = Executors.newFixedThreadPool(CountHelper.ThreadNum);
+        for (int i = 0; i < CountHelper.ThreadNum; i++) {
+
+            serExecutorService.execute(new Runnable() {
+                public void run() {
+                    try {
+                        startClient(bootstrap);//阻塞运行 需要开线程启动
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+    }
 }
