@@ -26,7 +26,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class moniMaster {
     public static void main(String[] args) {
 
-        String zkAddr = "192.168.18.27:2181,192.168.18.27:2182,192.168.18.27:2183";
+        String zkAddr = "47.99.91.17:2181,47.99.91.17:2182,47.99.91.17:2183";
 
         EventLoopGroup boss = new NioEventLoopGroup();
         EventLoopGroup work = new NioEventLoopGroup();
